@@ -60,6 +60,14 @@ The bot supports the following commands:
 
 - `/gem <prompt>`: Generates a response based on a provided text prompt.
 - `/imgai <optional prompt>`: Generates a response based on an image. Ensure you reply to an image with the /imgai command. Optionally, you can provide a prompt along with the command, like `/imgai What is this?`, while replying to a photo to get a more specific response.
+- 
+## Owner ⚡️
+
+- Name: Bisnu Ray
+- Telegram: [@TheSmartBisnu](https://t.me/TheSmartBisnu)
+
+##Note 
+I Just Added Start Message And Told How To Use In Low Python And So Main Credit TheSmartBisnu
 
 ## Update ⚡️
 
