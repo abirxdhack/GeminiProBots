@@ -1,0 +1,3 @@
+pyrofork
+pillow
+google-generativeai
