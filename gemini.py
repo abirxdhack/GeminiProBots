@@ -37,7 +37,7 @@ async def start(client: Client, message: Message):
     )
     await message.reply_text(start_message)
 
-@app.on_message(filters.command("gem"))
+@app.on_message(filters.command(["gem","gemi","gemini"], prefixes=["/", "."]) & (filters.private | filters.group))
 async def gemi_handler(client: Client, message: Message):
     loading_message = None
     try:
@@ -59,12 +59,12 @@ async def gemi_handler(client: Client, message: Message):
             await message.reply_text(response_text)
 
     except Exception as e:
-        await message.reply_text(f"**An error occurred ❌ : {str(e)}**")
+        await message.reply_text(f"**An error occurred ❌**")
     finally:
         if loading_message:
             await loading_message.delete()
 
-@app.on_message(filters.command("imgai"))
+@app.on_message(filters.command(["imgai"], prefixes=["/", "."]) & (filters.private | filters.group))
 async def generate_from_image(client: Client, message: Message):
     if not message.reply_to_message or not message.reply_to_message.photo:
         await message.reply_text("**Please reply to a photo for a response ❌ **")
@@ -84,7 +84,7 @@ async def generate_from_image(client: Client, message: Message):
         await message.reply_text(response_text, parse_mode=None)
     except Exception as e:
         logging.error(f"Error during image analysis: {e}")
-        await message.reply_text("**An error occurred. Please try again ❌ **")
+        await message.reply_text("**An error occurred❌ **")
     finally:
         await processing_message.delete()
 
